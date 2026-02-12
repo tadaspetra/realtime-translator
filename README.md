@@ -67,9 +67,8 @@ npm run dev
 - `src/components/ScribeRealtimeDemo.tsx` - Realtime transcription/translation UI and logic
 - `src/pages/api/scribe-token.ts` - Server route that issues single-use `realtime_scribe` tokens
 - `src/pages/index.astro` - Main page shell and demo mount point
-- `src/layouts/Layout.astro` - Shared layout and external style includes
+- `src/layouts/Layout.astro` - Shared layout
 
 ## Notes
 
-- `Layout.astro` links external Eleven CDN stylesheets for visual parity.
 - The token endpoint is intended for local/demo use; add auth/rate limiting before production use.
