@@ -1,0 +1,62 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ScribeRealtimeDemo from '../components/ScribeRealtimeDemo';
+---
+
+<Layout>
+	<main id="main" class="page-root">
+		<header class="page-header-shell">
+			<div class="container page-header">
+				<a href="#content" class="skip-link">
+					Skip to content
+				</a>
+				<a aria-label="ElevenLabs" class="brand-link" href="/">
+					<svg fill="currentColor" viewBox="0 0 116 15" aria-hidden="true" style="width:7.25rem">
+						<path
+							d="M41.377 3.7h-2.966l3.584 11.053h3.192l3.584-11.054h-2.966l-2.244 8.327zM0 0h3.069v14.752H0zM6.097 0h3.068v14.752H6.098zM12.192 0h9.083v2.459h-6.014V5.97h5.602V8.43h-5.602v3.863h6.014v2.46h-9.083zM23.15 0h2.903v14.752H23.15zM27.804 9.215c0-4.03 1.998-5.765 5.107-5.765s4.882 1.715 4.882 5.806v.661h-7.126c.102 2.397.823 3.203 2.203 3.203 1.092 0 1.772-.64 1.895-1.757h2.904C37.484 13.801 35.466 15 32.87 15c-3.295 0-5.066-1.756-5.066-5.785m7.126-1.22c-.144-2.024-.844-2.685-2.06-2.685-1.215 0-1.977.682-2.183 2.686zM49.327 9.215c0-4.03 1.998-5.765 5.108-5.765s4.881 1.715 4.881 5.806v.661H52.19c.103 2.397.824 3.203 2.204 3.203 1.091 0 1.771-.64 1.895-1.757h2.904c-.186 2.438-2.204 3.637-4.8 3.637-3.295 0-5.066-1.756-5.066-5.785m7.126-1.22c-.144-2.024-.844-2.685-2.06-2.685-1.214 0-1.977.682-2.182 2.686zM73.073 0h3.07v12.293h5.766v2.46h-8.836z"
+						></path>
+						<path
+							fill-rule="evenodd"
+							clip-rule="evenodd"
+							d="M82.63 9.215c0-4.215 1.936-5.765 4.428-5.765 1.236 0 2.368.703 2.822 1.446V3.698h2.966v11.054h-2.884V13.45c-.432.868-1.648 1.55-2.986 1.55-2.637 0-4.346-1.694-4.346-5.785m5.19-3.595c1.442 0 2.224 1.095 2.224 3.595s-.782 3.615-2.224 3.615-2.265-1.115-2.265-3.615.823-3.595 2.265-3.595M97.974 13.45v1.302h-2.883V0h2.904v4.897c.494-.765 1.647-1.447 2.883-1.447 2.431 0 4.367 1.55 4.367 5.765S103.35 15 100.816 15c-1.338 0-2.43-.682-2.842-1.55m2.08-7.81c1.442 0 2.266 1.075 2.266 3.575s-.824 3.616-2.266 3.616c-1.441 0-2.224-1.116-2.224-3.616s.783-3.574 2.224-3.574"
+						></path>
+						<path
+							d="M106.44 11.467h2.904c.042 1.157.659 1.715 1.751 1.715s1.71-.496 1.71-1.364c0-.785-.474-1.074-1.504-1.322l-.886-.228c-2.512-.64-3.769-1.322-3.769-3.409s1.936-3.409 4.408-3.409c2.471 0 4.346.971 4.428 3.265h-2.904c-.062-1.013-.68-1.447-1.565-1.447-.886 0-1.504.434-1.504 1.26 0 .765.494 1.054 1.36 1.261l.906.227c2.389.6 3.892 1.199 3.892 3.43 0 2.232-1.977 3.554-4.654 3.554-2.904 0-4.511-1.095-4.573-3.533M64.012 8.244c0-1.736.823-2.686 2.1-2.686 1.05 0 1.648.66 1.648 2.086v7.108h2.904V7.19c0-2.562-1.442-3.74-3.542-3.74-1.422 0-2.595.723-3.11 1.674V3.698h-2.946v11.054h2.946z"
+						></path>
+					</svg>
+				</a>
+				<div class="header-actions">
+					<a
+						class="demo-primary-button demo-primary-button--small"
+						href="https://elevenlabs.io/docs"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						Visit docs
+					</a>
+				</div>
+			</div>
+		</header>
+
+		<div id="content" class="page-content">
+			<section class="container hero-section">
+				<div class="hero-grid">
+					<h1 class="hero-title">
+						Scribe v2 realtime transcription
+					</h1>
+					<p class="hero-description">
+						Stream your microphone to ElevenLabs in real time, view low-latency partial transcripts,
+						and capture committed segments.
+					</p>
+				</div>
+			</section>
+
+			<section class="container demo-section">
+				<div class="demo-frame">
+					<div class="demo-frame-outline"></div>
+					<ScribeRealtimeDemo client:only="react" />
+				</div>
+			</section>
+		</div>
+	</main>
+</Layout>

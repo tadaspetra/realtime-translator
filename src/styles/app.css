@@ -1,0 +1,372 @@
+@import "@fontsource-variable/manrope";
+
+:root {
+  --page-bg: #fdfcfc;
+  --text-primary: #101828;
+  --text-secondary: #344054;
+  --surface-cream: #f4f3f1;
+  --surface-white: #ffffff;
+  --line-soft: rgba(16, 24, 40, 0.1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--page-bg);
+  color: var(--text-primary);
+  font-family: "Manrope Variable", "Manrope", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.45;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.page-root {
+  min-height: 100vh;
+}
+
+.page-header-shell {
+  position: relative;
+  z-index: 50;
+}
+
+.page-header {
+  align-items: center;
+  display: flex;
+  gap: 1.75rem;
+  height: 4rem;
+}
+
+.header-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-left: auto;
+}
+
+.skip-link {
+  background: #101828;
+  border-radius: 999px;
+  color: #ffffff;
+  display: inline-flex;
+  font-size: 0.875rem;
+  font-weight: 500;
+  height: 2.5rem;
+  left: -99999px;
+  padding: 0 1rem;
+  position: fixed;
+  top: 1.25rem;
+  z-index: 99999;
+  align-items: center;
+  justify-content: center;
+}
+
+.skip-link:focus-visible {
+  left: 1.25rem;
+  outline: 2px solid rgba(16, 24, 40, 0.45);
+  outline-offset: 2px;
+}
+
+.brand-link {
+  align-items: center;
+  border-radius: 999px;
+  color: #101828;
+  display: inline-flex;
+  height: 2.25rem;
+  padding: 0 0.75rem;
+}
+
+.brand-link:focus-visible {
+  outline: 2px solid rgba(16, 24, 40, 0.45);
+  outline-offset: 2px;
+}
+
+.demo-primary-button {
+  align-items: center;
+  background: #111111;
+  border: 0;
+  border-radius: 999px;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 500;
+  gap: 0.4rem;
+  height: 2rem;
+  justify-content: center;
+  line-height: 1.4;
+  padding: 0 0.75rem;
+  transition: background-color 180ms ease-out, transform 180ms ease-out, opacity 180ms ease-out;
+  white-space: nowrap;
+}
+
+.demo-primary-button:hover {
+  background: #000000;
+}
+
+.demo-primary-button:active {
+  transform: scale(0.98);
+}
+
+.demo-primary-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.demo-primary-button:focus-visible {
+  outline: 2px solid rgba(16, 24, 40, 0.45);
+  outline-offset: 2px;
+}
+
+.demo-primary-button--small {
+  height: 1.75rem;
+}
+
+.page-content {
+  padding-bottom: 5rem;
+}
+
+.hero-section {
+  padding-bottom: 2rem;
+  padding-top: 3rem;
+}
+
+.hero-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.hero-title {
+  color: #111111;
+  font-size: clamp(2.05rem, 4.8vw, 4.35rem);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 0.98;
+  margin: 0;
+  max-width: 38rem;
+  text-wrap: balance;
+}
+
+.hero-title span {
+  display: block;
+}
+
+.hero-description {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.42;
+  margin: 0;
+  max-width: 40rem;
+  text-wrap: pretty;
+}
+
+.demo-section {
+  padding-top: 0;
+}
+
+.demo-frame {
+  background: var(--surface-cream);
+  border-radius: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  height: 37rem;
+  overflow: hidden;
+  padding: 1rem;
+  position: relative;
+}
+
+.demo-frame-outline {
+  border: 1px solid var(--line-soft);
+  border-radius: 1.5rem;
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: 1;
+}
+
+.demo-frame > *:not(.demo-frame-outline) {
+  position: relative;
+  z-index: 2;
+}
+
+.scribe-demo {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 1rem;
+  height: 100%;
+}
+
+.scribe-toolbar {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: space-between;
+}
+
+.scribe-toolbar-actions {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.scribe-language-controls {
+  align-items: flex-end;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.scribe-status-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.scribe-error-message {
+  font-size: 1rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.scribe-panels {
+  display: grid;
+  flex: 1;
+  gap: 0.75rem;
+  grid-template-columns: 1fr;
+  min-height: 0;
+}
+
+.scribe-section-header {
+  align-items: center;
+  display: flex;
+}
+
+.scribe-section-title {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.scribe-live-preview {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 6rem;
+  padding-top: 0.75rem;
+}
+
+.scribe-live-blocks {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.scribe-overline {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.scribe-body {
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.scribe-empty-state {
+  display: flex;
+  flex: 1;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.scribe-committed-scroll {
+  flex: 1;
+  margin-top: 0.75rem;
+  overflow-y: auto;
+  padding-right: 0.25rem;
+}
+
+.scribe-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.scribe-list-item + .scribe-list-item {
+  margin-top: 0.5rem;
+}
+
+.scribe-list-item {
+  padding: 0.75rem;
+}
+
+.scribe-list-row {
+  align-items: center;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: space-between;
+}
+
+.scribe-list-badges {
+  align-items: center;
+  display: flex;
+  gap: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+
+  .demo-frame {
+    padding: 1.5rem 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-section {
+    padding-bottom: 2.5rem;
+    padding-top: 5.5rem;
+  }
+
+  .hero-grid {
+    align-items: end;
+    gap: 3rem;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .scribe-panels {
+    gap: 0.75rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
